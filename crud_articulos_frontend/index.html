@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Artículos</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Gestión de Artículos</h1>
+        </header>
+
+        <!-- Sección del Formulario -->
+        <section class="formulario-contenedor">
+            <!-- ID corregido a 'form-articulo' -->
+            <form id="form-articulo">
+                <!-- ID corregido a 'idArticulo' -->
+                <input type="hidden" id="idArticulo">
+
+                <div class="form-group">
+                    <label for="nombre">Nombre del Artículo</label>
+                    <input type="text" id="nombre" placeholder="Ej. Computadora portátil, Teclado mecánico..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="number" id="precio" step="0.01" placeholder="0.00" required>
+                </div>
+
+                <div class="botones">
+                    <button type="submit" id="btn-guardar">Guardar</button>
+                    <!-- ID corregido a 'cancelar' -->
+                    <button type="button" id="cancelar">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Sección de la Tabla de Datos -->
+        <section class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">ID</th>
+                        <th style="width: 50%;">Nombre</th>
+                        <th style="width: 20%;">Precio</th>
+                        <th style="width: 20%; text-align: center;">Acciones</th>
+                    </tr>
+                </thead>
+                <!-- ID corregido a 'tabla-articulos' -->
+                <tbody id="tabla-articulos">
+                    <!-- Las filas se inyectan dinámicamente mediante app.js -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>

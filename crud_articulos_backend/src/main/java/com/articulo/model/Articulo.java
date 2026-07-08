@@ -13,7 +13,7 @@ import jakarta.persistence.Column;       // Permite personalizar el nombre y pro
  * Esta clase se mapea a una tabla de base de datos usando JPA.
  */
 @Entity // Indica que esta clase es una entidad persistente
-@Table(name = "articulo") // Nombre de la tabla asociada en la base de datos
+@Table(name = "articulos") // Nombre de la tabla asociada en la base de datos
 public class Articulo { // Declaración de la clase pública Articulo
 
     @Id // Indica que el campo id es la clave primaria de la entidad

@@ -1,0 +1,232 @@
+/* ==========================================================================
+   Configuración General y Variables (Estilo Muebles París - Delicado)
+   ========================================================================== */
+/* Usamos Garamond para un toque clásico francés y Inter para legibilidad */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+    --bg-principal: #fffcf9; /* Crema muy suave */
+    --bg-card: #ffffff;
+    --texto-principal: #3a3a3a; /* Gris muy oscuro, no negro puro */
+    --texto-secundario: #8c8c8c;
+    --color-primario: #d4af37; /* Dorado sutil para acentos */
+    --color-primario-hover: #b59431;
+    --color-cancelar: #e0e0e0;
+    --color-cancelar-hover: #d0d0d0;
+    --borde: #f3eae0; /* Borde beige muy suave */
+    --sombra-delicada: 0 4px 12px rgba(212, 175, 55, 0.03); /* Sombra dorada casi invisible */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    margin: 0;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    width: 100%;
+}
+
+/* ==========================================================================
+   Tipografía y Títulos (Clásicos y Refinados)
+   ========================================================================== */
+h1 {
+    font-family: var(--font-heading);
+    text-align: center;
+    color: var(--texto-principal);
+    font-weight: 500;
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Detalle elegante debajo del título */
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 1px;
+    background-color: var(--color-primario);
+}
+
+/* ==========================================================================
+   Formulario (Sofisticado y Minimalista)
+   ========================================================================== */
+.formulario-contenedor {
+    background: var(--bg-card);
+    border-radius: 4px; /* Bordes más rectos y finos */
+    padding: 40px;
+    box-shadow: var(--sombra-delicada);
+    border: 1px solid var(--borde);
+    margin-bottom: 50px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--texto-principal);
+    margin-bottom: 10px;
+    display: block;
+    letter-spacing: 0.02em;
+}
+
+input[type="text"],
+input[type="number"],
+input {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 14px 18px;
+    border: 1px solid var(--borde);
+    border-radius: 2px; /* Casi recto */
+    background-color: #ffffff;
+    color: var(--texto-principal);
+    width: 100%;
+    box-sizing: border-box; /* Importante para que el padding no agrande el input */
+    transition: all 0.3s ease;
+}
+
+/* Efecto de enfoque dorado y sutil */
+input:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.05);
+}
+
+/* ==========================================================================
+   Botones (Elegancia Dorada)
+   ========================================================================== */
+.botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 28px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: all 0.3s ease;
+}
+
+/* Botón Guardar / Principal */
+#btn-guardar {
+    background-color: var(--color-primario);
+    color: #ffffff;
+}
+
+#btn-guardar:hover {
+    background-color: var(--color-primario-hover);
+}
+
+/* Botón Cancelar / Secundario */
+#cancelar {
+    background-color: transparent;
+    border-color: var(--color-cancelar);
+    color: var(--texto-secundario);
+}
+
+#cancelar:hover {
+    background-color: var(--color-cancelar);
+    color: var(--texto-principal);
+}
+
+/* ==========================================================================
+   Tabla (Minimalismo Francés)
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--sombra-delicada);
+    border: 1px solid var(--borde);
+}
+
+th {
+    font-family: var(--font-heading);
+    background-color: #fcf8f3; /* Beige ultra suave */
+    color: var(--texto-principal);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    padding: 18px 25px;
+    text-align: left;
+    border-bottom: 1px solid var(--borde);
+}
+
+td {
+    padding: 18px 25px;
+    font-size: 0.9rem;
+    color: var(--texto-principal);
+    border-bottom: 1px solid var(--borde);
+    transition: background-color 0.3s ease;
+}
+
+/* Fila interactiva ultra sutil */
+tr:hover td {
+    background-color: #fffaf5;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Botones de acción en la tabla (Finos y sutiles) */
+td button {
+    font-family: var(--font-body); /* Para los botones de la tabla, una fuente más limpia */
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    border-radius: 2px;
+    letter-spacing: 0.01em;
+}
+
+/* Botón Editar */
+td button:first-child {
+    background-color: transparent;
+    border: 1px solid #e0e0e0;
+    color: var(--texto-secundario);
+}
+
+td button:first-child:hover {
+    border-color: var(--color-primario);
+    color: var(--color-primario);
+    background-color: transparent;
+}
+
+/* Botón Eliminar */
+td button:last-child {
+    background-color: transparent;
+    border: 1px solid #f3e0e0;
+    color: #d32f2f;
+}
+
+td button:last-child:hover {
+    background-color: #d32f2f;
+    color: #ffffff;
+    border-color: #d32f2f;
+}
