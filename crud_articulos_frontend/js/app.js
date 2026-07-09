@@ -110,3 +110,42 @@ function eliminarArticulo(id) {
         .catch(error => console.error("Error al eliminar artículo:", error)); // Manejo de errores
     }
 }
+
+function buscarPorId() {
+    const id = document.getElementById('buscar-id').value;
+    
+    // Si el campo está vacío, volvemos a listar todos de manera limpia
+    if (!id) {
+        listarArticulos();
+        return;
+    }
+
+    fetch(`${API_URL}/${id}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Artículo no encontrado');
+            }
+            return response.json();
+        })
+        .then(articulo => {
+            // CORRECCIÓN 1: Usamos "tabla-articulos" igual que en tu función listar
+            const tbody = document.getElementById("tabla-articulos"); 
+            
+            // Redibujamos usando las mismas clases de Bootstrap que ya tenés
+            tbody.innerHTML = `
+                <tr>
+                    <td>${articulo.id}</td>
+                    <td>${articulo.nombre}</td>
+                    <td>${articulo.precio.toFixed(2)}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="editarArticulo(${articulo.id})">Editar</button>
+                        <button class="btn btn-danger btn-sm" onclick="eliminarArticulo(${articulo.id})">Eliminar</button>
+                    </td>
+                </tr>
+            `;
+        })
+        .catch(error => {
+            alert('No se encontró ningún artículo con el ID especificado.');
+            console.error("Error al buscar:", error);
+        });
+}
